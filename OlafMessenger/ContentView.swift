@@ -18,27 +18,32 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
+            TabView{
+                ArticleList()
+                    .tabItem {
+                                Label("News", systemImage: "newspaper.fill")
+                            }
+                ArticleList()
+                    .tabItem {
+                                Label("A&E", systemImage: "theatermask.and.paintbrush.fill")
+                            }
+                ArticleList()
+                    .tabItem {
+                                Label("Opinions", systemImage: "lightbulb.fill")
+                            }
+                ArticleList()
+                    .tabItem {
+                                Label("Sports", systemImage: "sportscourt.fill")
+                            }
+                ArticleList()
+                    .tabItem {
+                                Label("Variety", systemImage: "music.note")
+                            }
+                ArticleList()
+                    .tabItem {
+                                Label("About", systemImage: "tray.and.arrow.down.fill")
+                            }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
         }
     }
 
@@ -84,3 +89,26 @@ private let itemFormatter: DateFormatter = {
 #Preview {
     ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
+
+
+//List {
+//    ForEach(items) { item in
+//        NavigationLink {
+//            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+//        } label: {
+//            Text(item.timestamp!, formatter: itemFormatter)
+//        }
+//    }
+//    .onDelete(perform: deleteItems)
+//}
+//.toolbar {
+//    ToolbarItem(placement: .navigationBarTrailing) {
+//        EditButton()
+//    }
+//    ToolbarItem {
+//        Button(action: addItem) {
+//            Label("Add Item", systemImage: "plus")
+//        }
+//    }
+//}
+//Text("Select an item")

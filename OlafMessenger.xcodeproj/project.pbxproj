@@ -13,6 +13,13 @@
 		6D3588CD2BEDD57C009EC508 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D3588CC2BEDD57C009EC508 /* Preview Assets.xcassets */; };
 		6D3588CF2BEDD57C009EC508 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588CE2BEDD57C009EC508 /* Persistence.swift */; };
 		6D3588D22BEDD57C009EC508 /* OlafMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588D02BEDD57C009EC508 /* OlafMessenger.xcdatamodeld */; };
+		6D3588DA2BEE6164009EC508 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588D92BEE6164009EC508 /* ArticleModel.swift */; };
+		6D3588DC2BEE66B9009EC508 /* ArticleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588DB2BEE66B9009EC508 /* ArticleData.swift */; };
+		6D3588DF2BEE66F5009EC508 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588DE2BEE66F5009EC508 /* Service.swift */; };
+		6D3588E12BEE672B009EC508 /* FavoriteArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588E02BEE672B009EC508 /* FavoriteArticleModel.swift */; };
+		6D3588E32BEE6A5C009EC508 /* ArticleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588E22BEE6A5C009EC508 /* ArticleRow.swift */; };
+		6D3588E52BEE6A6B009EC508 /* ArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588E42BEE6A6B009EC508 /* ArticleList.swift */; };
+		6D3588E72BEE6A7B009EC508 /* ArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588E62BEE6A7B009EC508 /* ArticleDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +30,13 @@
 		6D3588CC2BEDD57C009EC508 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6D3588CE2BEDD57C009EC508 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6D3588D12BEDD57C009EC508 /* OlafMessenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OlafMessenger.xcdatamodel; sourceTree = "<group>"; };
+		6D3588D92BEE6164009EC508 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		6D3588DB2BEE66B9009EC508 /* ArticleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleData.swift; sourceTree = "<group>"; };
+		6D3588DE2BEE66F5009EC508 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		6D3588E02BEE672B009EC508 /* FavoriteArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteArticleModel.swift; sourceTree = "<group>"; };
+		6D3588E22BEE6A5C009EC508 /* ArticleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRow.swift; sourceTree = "<group>"; };
+		6D3588E42BEE6A6B009EC508 /* ArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleList.swift; sourceTree = "<group>"; };
+		6D3588E62BEE6A7B009EC508 /* ArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +69,12 @@
 		6D3588C42BEDD57A009EC508 /* OlafMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				6D3588E22BEE6A5C009EC508 /* ArticleRow.swift */,
+				6D3588E42BEE6A6B009EC508 /* ArticleList.swift */,
+				6D3588E62BEE6A7B009EC508 /* ArticleDetail.swift */,
+				6D3588DB2BEE66B9009EC508 /* ArticleData.swift */,
+				6D3588DD2BEE66EA009EC508 /* Service */,
+				6D3588D82BEE614F009EC508 /* Models */,
 				6D3588C52BEDD57A009EC508 /* OlafMessengerApp.swift */,
 				6D3588C72BEDD57A009EC508 /* ContentView.swift */,
 				6D3588C92BEDD57C009EC508 /* Assets.xcassets */,
@@ -71,6 +91,23 @@
 				6D3588CC2BEDD57C009EC508 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6D3588D82BEE614F009EC508 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6D3588D92BEE6164009EC508 /* ArticleModel.swift */,
+				6D3588E02BEE672B009EC508 /* FavoriteArticleModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6D3588DD2BEE66EA009EC508 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6D3588DE2BEE66F5009EC508 /* Service.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +181,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D3588CF2BEDD57C009EC508 /* Persistence.swift in Sources */,
+				6D3588DF2BEE66F5009EC508 /* Service.swift in Sources */,
+				6D3588E52BEE6A6B009EC508 /* ArticleList.swift in Sources */,
+				6D3588E12BEE672B009EC508 /* FavoriteArticleModel.swift in Sources */,
+				6D3588DA2BEE6164009EC508 /* ArticleModel.swift in Sources */,
 				6D3588D22BEDD57C009EC508 /* OlafMessenger.xcdatamodeld in Sources */,
 				6D3588C82BEDD57A009EC508 /* ContentView.swift in Sources */,
+				6D3588E72BEE6A7B009EC508 /* ArticleDetail.swift in Sources */,
+				6D3588DC2BEE66B9009EC508 /* ArticleData.swift in Sources */,
 				6D3588C62BEDD57A009EC508 /* OlafMessengerApp.swift in Sources */,
+				6D3588E32BEE6A5C009EC508 /* ArticleRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
