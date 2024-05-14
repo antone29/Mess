@@ -9,27 +9,33 @@ import SwiftUI
 
 
 struct ArticleList: View {
-    //   var myArticle = ArticleModel(json: )
 
+    @State var page = 1
     @StateObject private var articleListModel = ArticleData()
     var category: Int
     
     var body: some View {
         ScrollView{
-            ForEach(articleListModel.list){ each in
-                ArticleRow(articleModel: each)
+            LazyVStack{
+                ForEach (articleListModel.list){ each in
+                    ArticleRow(articleModel: each)
+                }
+                ProgressView()
+                    .onAppear{
+                        self.page += 1
+                        Task{
+                            await self.articleListModel.getArticleData(page: page, category: category)
+                        }
+                    }
+            }.task{
+                await self.articleListModel.getArticleData(page: 1, category: category)
             }
         }
-        .task {
-            await self.articleListModel.getArticleData(page: 1, category: category)
-        }
-        .refreshable {
-            await self.articleListModel.getArticleData(page: 1, category: category)
-        }
-        
-        
+
     }
+    
 }
+
 //
 //#Preview {
 //    ArticleList(id: 6)

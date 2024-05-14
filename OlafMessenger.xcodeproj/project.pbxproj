@@ -21,7 +21,6 @@
 		6D3588E52BEE6A6B009EC508 /* ArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588E42BEE6A6B009EC508 /* ArticleList.swift */; };
 		6D3588E72BEE6A7B009EC508 /* ArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588E62BEE6A7B009EC508 /* ArticleDetail.swift */; };
 		6D35890C2BEEB788009EC508 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D35890B2BEEB788009EC508 /* AboutView.swift */; };
-		6DC293472BF2B14400099131 /* ArticleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC293462BF2B14400099131 /* ArticleListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +39,6 @@
 		6D3588E42BEE6A6B009EC508 /* ArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleList.swift; sourceTree = "<group>"; };
 		6D3588E62BEE6A7B009EC508 /* ArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetail.swift; sourceTree = "<group>"; };
 		6D35890B2BEEB788009EC508 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		6DC293462BF2B14400099131 /* ArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +101,6 @@
 			children = (
 				6D3588D92BEE6164009EC508 /* ArticleModel.swift */,
 				6D3588E02BEE672B009EC508 /* FavoriteArticleModel.swift */,
-				6DC293462BF2B14400099131 /* ArticleListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,7 +195,6 @@
 				6D3588DC2BEE66B9009EC508 /* ArticleData.swift in Sources */,
 				6D3588C62BEDD57A009EC508 /* OlafMessengerApp.swift in Sources */,
 				6D3588E32BEE6A5C009EC508 /* ArticleRow.swift in Sources */,
-				6DC293472BF2B14400099131 /* ArticleListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OlafMessenger/Preview Content\"";
+				DEVELOPMENT_TEAM = R6RWX9ZY6C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -360,6 +357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OlafMessenger/Preview Content\"";
+				DEVELOPMENT_TEAM = R6RWX9ZY6C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
