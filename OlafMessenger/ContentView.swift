@@ -8,84 +8,90 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+//Notes: the ids being passed into ArticleList correspond with the category id for each section. If for whatever reason, these change, the articles wont show up anymore. You can see what the id is in the JSON
+struct ContentView: View {
+   // var articledata = ArticleData()
+    
+//    @Environment(\.managedObjectContext) private var viewContext
+//
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+//        animation: .default)
+//    private var items: FetchedResults<Item>
 
     var body: some View {
         NavigationView {
             TabView{
-                ArticleList()
+                ArticleList(id: 7)
                     .tabItem {
                                 Label("News", systemImage: "newspaper.fill")
                             }
-                ArticleList()
+                ArticleList(id: 4)
                     .tabItem {
                                 Label("A&E", systemImage: "theatermask.and.paintbrush.fill")
                             }
-                ArticleList()
+                ArticleList(id: 6)
                     .tabItem {
                                 Label("Opinions", systemImage: "lightbulb.fill")
                             }
-                ArticleList()
+                ArticleList(id: 8)
                     .tabItem {
                                 Label("Sports", systemImage: "sportscourt.fill")
                             }
-                ArticleList()
+                ArticleList(id: 16)
                     .tabItem {
                                 Label("Variety", systemImage: "music.note")
                             }
-                ArticleList()
+                AboutView()
                     .tabItem {
                                 Label("About", systemImage: "tray.and.arrow.down.fill")
                             }
-            }
+            }//.navigationTitle("Olaf Messenger")
+        }.onAppear(){
+          
         }
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+//    private func addItem() {
+//        withAnimation {
+//            let newItem = Item(context: viewContext)
+//            newItem.timestamp = Date()
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
+//
+//    private func deleteItems(offsets: IndexSet) {
+//        withAnimation {
+//            offsets.map { items[$0] }.forEach(viewContext.delete)
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
+//private let itemFormatter: DateFormatter = {
+//    let formatter = DateFormatter()
+//    formatter.dateStyle = .short
+//    formatter.timeStyle = .medium
+//    return formatter
+//}()
+//
 #Preview {
     ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }

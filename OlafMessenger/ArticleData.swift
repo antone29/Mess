@@ -15,29 +15,41 @@ protocol ArticleDataDelegate : AnyObject {
     
 }
 
-
-class ArticleData {
+@MainActor
+class ArticleData : ObservableObject{
     
     weak var articleDataDelegate: ArticleDataDelegate?
-    var list: [ArticleModel] = []
-    var id = 0
+    //create an empty list to put your sorted articles in
+    @Published var list: [ArticleModel] = []
+    let id:Int
+    
+    init(id: Int) {
+        self.id = id
+
+    }
     var screenName = "temp"
-    func getArticleData(page: Int) {
+    func getArticleData(page: Int) async {
         
-        //here youre only getting what you ask for, so you can just get the category you want, which means you should be able to pass in the category you want and jsut get that data and add it all to one group of articles
+        //keep in mind that this only returns one category of data(which you pass in which one you want with the id)
         Service().getDataFromServer(page: page,category: id) { data in
             if let data = data {
+                //this line gets all of the articles in JSON format and puts them into articleData
                 if let articleData = self.dataToJSON(data: data) as? [Any] {
+                    //this line creates a loop and does the action inside the loop for every article in article data
                     for article in articleData {
+                        //this creates a constant with the article as a [String:Any] which is a dictionary, so its still a jumble of JSON that is difficult for us to use
                         if let photoData = article as? [String:Any] {
+                            //creates a constant as type ArticleModel and sorts through the JSON to create an constant that is easier for us to use
                             let newArticle = ArticleModel(json: photoData)
+                            //add each new ArticleModell to our list so we can use it elsewhere
                             self.list.append(newArticle)
+                            print(newArticle)
                          
                         }
                     }
                 }
             }
-            
+           
             self.articleDataDelegate?.reloadViews()
         }
         

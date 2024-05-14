@@ -8,17 +8,33 @@
 import SwiftUI
 
 struct ArticleList: View {
+    //   var myArticle = ArticleModel(json: )
+    let id: Int
+    @StateObject var articleListModel = ArticleData(id: 6)
+    
+    init(id: Int) {
+        self.id = id
+        // self.articleData = ArticleData(id: id)
+    }
+    
     var body: some View {
         ScrollView{
-            ForEach((0..<10)){_ in
-                ArticleRow()
-                    
+            ForEach(articleListModel.list){ each in
+                ArticleRow(articleModel: each)
+                
             }
         }
+        .task {
+            await self.articleListModel.getArticleData(page: 1)
+        }
+        .refreshable {
+            await self.articleListModel.getArticleData(page: 1)
+        }
+        
         
     }
 }
 
 #Preview {
-    ArticleList()
+    ArticleList(id: 6)
 }

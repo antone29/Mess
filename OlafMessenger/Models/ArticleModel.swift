@@ -23,7 +23,7 @@ struct Content: Codable {
 
 //you will see many replacement lines. The original JSON had a lot of html tags and special characters were replaced with the lines you see below. This was the neatest, shorter way I was able to clean up the content and titles.
 //Author is not used because the authors are passed as interger values, not named. I do not have access to the API that maps the numbers to the names unfortunately.
-class ArticleModel: Codable {
+class ArticleModel: Codable, Identifiable {
     let date: String?
     let title: String?
     let content: String?

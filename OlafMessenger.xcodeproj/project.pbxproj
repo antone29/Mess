@@ -20,6 +20,8 @@
 		6D3588E32BEE6A5C009EC508 /* ArticleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588E22BEE6A5C009EC508 /* ArticleRow.swift */; };
 		6D3588E52BEE6A6B009EC508 /* ArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588E42BEE6A6B009EC508 /* ArticleList.swift */; };
 		6D3588E72BEE6A7B009EC508 /* ArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588E62BEE6A7B009EC508 /* ArticleDetail.swift */; };
+		6D35890C2BEEB788009EC508 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D35890B2BEEB788009EC508 /* AboutView.swift */; };
+		6DC293472BF2B14400099131 /* ArticleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC293462BF2B14400099131 /* ArticleListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		6D3588E22BEE6A5C009EC508 /* ArticleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRow.swift; sourceTree = "<group>"; };
 		6D3588E42BEE6A6B009EC508 /* ArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleList.swift; sourceTree = "<group>"; };
 		6D3588E62BEE6A7B009EC508 /* ArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetail.swift; sourceTree = "<group>"; };
+		6D35890B2BEEB788009EC508 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		6DC293462BF2B14400099131 /* ArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 				6D3588CE2BEDD57C009EC508 /* Persistence.swift */,
 				6D3588D02BEDD57C009EC508 /* OlafMessenger.xcdatamodeld */,
 				6D3588CB2BEDD57C009EC508 /* Preview Content */,
+				6D35890B2BEEB788009EC508 /* AboutView.swift */,
 			);
 			path = OlafMessenger;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 			children = (
 				6D3588D92BEE6164009EC508 /* ArticleModel.swift */,
 				6D3588E02BEE672B009EC508 /* FavoriteArticleModel.swift */,
+				6DC293462BF2B14400099131 /* ArticleListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 				6D3588DF2BEE66F5009EC508 /* Service.swift in Sources */,
 				6D3588E52BEE6A6B009EC508 /* ArticleList.swift in Sources */,
 				6D3588E12BEE672B009EC508 /* FavoriteArticleModel.swift in Sources */,
+				6D35890C2BEEB788009EC508 /* AboutView.swift in Sources */,
 				6D3588DA2BEE6164009EC508 /* ArticleModel.swift in Sources */,
 				6D3588D22BEDD57C009EC508 /* OlafMessenger.xcdatamodeld in Sources */,
 				6D3588C82BEDD57A009EC508 /* ContentView.swift in Sources */,
@@ -191,6 +198,7 @@
 				6D3588DC2BEE66B9009EC508 /* ArticleData.swift in Sources */,
 				6D3588C62BEDD57A009EC508 /* OlafMessengerApp.swift in Sources */,
 				6D3588E32BEE6A5C009EC508 /* ArticleRow.swift in Sources */,
+				6DC293472BF2B14400099131 /* ArticleListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

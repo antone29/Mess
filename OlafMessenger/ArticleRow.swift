@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ArticleRow: View {
+    var articleModel : ArticleModel
     var body: some View {
         NavigationLink(destination: ArticleDetail()) {
             HStack{
@@ -15,11 +16,11 @@ struct ArticleRow: View {
                     .resizable()
                     .frame(width: 50, height: 50, alignment: .center)
                 VStack(alignment: .leading){
-                    Text("Title")
+                    Text(articleModel.title!)
                         .font(.headline)
-                    Text("Author")
-                        .font(.subheadline)
-                    Text("Preview")
+//                    Text(articleModel.author)
+//                        .font(.subheadline)
+                    Text(articleModel.content!)
                         .font(.caption)
                 }
                 Spacer()
@@ -33,6 +34,6 @@ struct ArticleRow: View {
     }
 }
 
-#Preview {
-    ArticleRow()
-}
+//#Preview {
+//    ArticleRow(articleModel: ArticleModel)
+//}

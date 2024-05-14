@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+
+//Troubleshooting: Are you not getting any data at all? copy the base, page, other, and section that you are using. past into a web browser. if nothing comes up its because the page and/or category dont exist. 
 class Service {
     let session = URLSession.shared
     let dataCache = NSCache<NSString, AnyObject>()
@@ -27,9 +29,11 @@ class Service {
             } else {
                 if let data = data {
                     completion(data)
+                    print(data)
                 }
             }
         }
+        
         dataTask.resume()
     }
 }
