@@ -10,7 +10,7 @@ import SwiftUI
 struct ArticleRow: View {
     var articleModel : ArticleModel
     var body: some View {
-        NavigationLink(destination: ArticleDetail()) {
+        NavigationLink(destination: ArticleDetail(articleModel: articleModel)) {
             HStack{
                 Image("mess_logo")
                     .resizable()
@@ -22,6 +22,7 @@ struct ArticleRow: View {
 //                        .font(.subheadline)
                     Text(articleModel.content!)
                         .font(.caption)
+                        .lineLimit(3)
                 }
                 Spacer()
                 

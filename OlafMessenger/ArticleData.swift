@@ -21,17 +21,11 @@ class ArticleData : ObservableObject{
     weak var articleDataDelegate: ArticleDataDelegate?
     //create an empty list to put your sorted articles in
     @Published var list: [ArticleModel] = []
-    let id:Int
-    
-    init(id: Int) {
-        self.id = id
 
-    }
-    var screenName = "temp"
-    func getArticleData(page: Int) async {
+    func getArticleData(page: Int, category: Int) async {
         
         //keep in mind that this only returns one category of data(which you pass in which one you want with the id)
-        Service().getDataFromServer(page: page,category: id) { data in
+        Service().getDataFromServer(page: page, category: category) { data in
             if let data = data {
                 //this line gets all of the articles in JSON format and puts them into articleData
                 if let articleData = self.dataToJSON(data: data) as? [Any] {
@@ -42,8 +36,11 @@ class ArticleData : ObservableObject{
                             //creates a constant as type ArticleModel and sorts through the JSON to create an constant that is easier for us to use
                             let newArticle = ArticleModel(json: photoData)
                             //add each new ArticleModell to our list so we can use it elsewhere
-                            self.list.append(newArticle)
-                            print(newArticle)
+                            DispatchQueue.main.async {
+                                self.list.append(newArticle)
+                            }
+                            
+                            
                          
                         }
                     }

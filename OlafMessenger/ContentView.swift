@@ -23,23 +23,23 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             TabView{
-                ArticleList(id: 7)
+                ArticleList(category: 7)
                     .tabItem {
                                 Label("News", systemImage: "newspaper.fill")
                             }
-                ArticleList(id: 4)
+                ArticleList(category: 4)
                     .tabItem {
                                 Label("A&E", systemImage: "theatermask.and.paintbrush.fill")
                             }
-                ArticleList(id: 6)
+                ArticleList(category: 6)
                     .tabItem {
                                 Label("Opinions", systemImage: "lightbulb.fill")
                             }
-                ArticleList(id: 8)
+                ArticleList(category: 8)
                     .tabItem {
                                 Label("Sports", systemImage: "sportscourt.fill")
                             }
-                ArticleList(id: 16)
+                ArticleList(category: 16)
                     .tabItem {
                                 Label("Variety", systemImage: "music.note")
                             }
