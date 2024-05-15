@@ -16,7 +16,7 @@ protocol ArticleDataDelegate : AnyObject {
 }
 
 @MainActor
-class ArticleData : ObservableObject{
+class ArticleData : ObservableObject {
     
     weak var articleDataDelegate: ArticleDataDelegate?
     //create an empty list to put your sorted articles in

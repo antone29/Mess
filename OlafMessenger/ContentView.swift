@@ -19,6 +19,11 @@ struct ContentView: View {
 //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
 //        animation: .default)
 //    private var items: FetchedResults<Item>
+    @EnvironmentObject var manager: DataManager
+    //added lines
+    @Environment(\.managedObjectContext) private var viewContext
+        @FetchRequest(sortDescriptors: []) private var todoItems: FetchedResults<Item>
+    
 
     var body: some View {
         NavigationView {
@@ -42,6 +47,10 @@ struct ContentView: View {
                 ArticleList(category: 16)
                     .tabItem {
                                 Label("Variety", systemImage: "music.note")
+                            }
+                FavoriteArticleView()
+                    .tabItem {
+                                Label("Favorites", systemImage: "heart.fill")
                             }
                 AboutView()
                     .tabItem {
@@ -92,9 +101,9 @@ struct ContentView: View {
 //    return formatter
 //}()
 //
-#Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-}
+//#Preview {
+//    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//}
 
 
 //List {
