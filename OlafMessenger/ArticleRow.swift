@@ -24,14 +24,19 @@ struct ArticleRow: View {
                         .font(.caption)
                         .lineLimit(3)
                 }
-                Spacer()
+//                Button(action:{
+//                    
+//                }){
+//                //    Image(systemName: isLiked ? "heart.fill" : "heart")
+//                }
+               
                 
             }.padding(10)
                 .background(Color("background_yellow"))
                 .cornerRadius(15)
             
             
-        }
+        }.padding(10)
     }
 }
 

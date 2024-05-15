@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct OlafMessengerApp: App {
-    let persistenceController = PersistenceController.shared
+   // let persistenceController = PersistenceController.shared
+    @StateObject private var dataController = FavoritesDataManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(dataController)
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

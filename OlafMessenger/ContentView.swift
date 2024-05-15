@@ -11,14 +11,11 @@ import CoreData
 
 //Notes: the ids being passed into ArticleList correspond with the category id for each section. If for whatever reason, these change, the articles wont show up anymore. You can see what the id is in the JSON
 struct ContentView: View {
-   // var articledata = ArticleData()
-    
-//    @Environment(\.managedObjectContext) private var viewContext
-//
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-//        animation: .default)
-//    private var items: FetchedResults<Item>
+
+    @EnvironmentObject var manager: FavoritesDataManager
+//    //added lines
+    @Environment(\.managedObjectContext) private var viewContext
+        @FetchRequest(sortDescriptors: []) private var favoriteArticles: FetchedResults<FavoriteArticleModel>
 
     var body: some View {
         NavigationView {
@@ -43,13 +40,14 @@ struct ContentView: View {
                     .tabItem {
                                 Label("Variety", systemImage: "music.note")
                             }
+                FavoriteArticleView()
                 AboutView()
                     .tabItem {
                                 Label("About", systemImage: "tray.and.arrow.down.fill")
                             }
             }//.navigationTitle("Olaf Messenger")
-        }.onAppear(){
-          
+            //.tabViewStyle(.page(indexDisplayMode: .always))
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
     }
 
@@ -92,9 +90,9 @@ struct ContentView: View {
 //    return formatter
 //}()
 //
-#Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-}
+//#Preview {
+//    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//}
 
 
 //List {

@@ -6,17 +6,30 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
+import SwiftUI
 //import RealmSwift
 
-//Had to create an additional Object so that it would work with RealmDB
-//class FavoriteArticleModel: Object {
-//    
-//    @objc dynamic var date: String?
-//    @objc dynamic var title: String?
-//    @objc dynamic var content: String?
-//    dynamic var categories: [Int]?
-//    @objc dynamic var url: String?
-//    
+
+class FavoriteArticleModel:  NSObject, ObservableObject, Identifiable  {
+    var taskName: String
+    @Published var isCompleted: Bool = false
+    
+    init(task: String) {
+        taskName = task
+    }
+    //  var date: String?
+//    @Published var title: String
+//    var content: String
+//   // var categories: [Int]?
+//    var image: String
+////    
+//    init(title: String, content: String, image: String) {
+//        self.title = title
+//        self.content = content
+//        self.image = image
+//    }
 //    static func create(withArticle article: ArticleModel) -> FavoriteArticleModel {
 //        let favorite = FavoriteArticleModel()
 //        
@@ -29,5 +42,5 @@ import Foundation
 //        return favorite
 //    }
 //    
-//    
-//}
+    
+}
