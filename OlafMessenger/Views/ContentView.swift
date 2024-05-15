@@ -22,7 +22,7 @@ struct ContentView: View {
     @EnvironmentObject var manager: DataManager
     //added lines
     @Environment(\.managedObjectContext) private var viewContext
-        @FetchRequest(sortDescriptors: []) private var todoItems: FetchedResults<Item>
+        @FetchRequest(sortDescriptors: []) private var todoItems: FetchedResults<Article>
     
 
     var body: some View {

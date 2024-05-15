@@ -11,7 +11,7 @@ import SwiftUI
 struct ArticleList: View {
 
     @State var page = 1
-    @StateObject private var articleListModel = ArticleData()
+    @StateObject private var articleListModel = ArticleDataModel()
     var category: Int
     
     var body: some View {

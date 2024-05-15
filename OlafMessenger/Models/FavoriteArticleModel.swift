@@ -1,33 +1,19 @@
 //
-//  FavoriteArticleModel.swift
+//  Item.swift
 //  OlafMessenger
 //
-//  Created by Bekki Antonelli on 5/10/24.
+//  Created by Bekki Antonelli on 5/15/24.
 //
 
-import Foundation
-//import RealmSwift
+import UIKit
+import SwiftUI
 
-//Had to create an additional Object so that it would work with RealmDB
-//class FavoriteArticleModel: Object {
-//    
-//    @objc dynamic var date: String?
-//    @objc dynamic var title: String?
-//    @objc dynamic var content: String?
-//    dynamic var categories: [Int]?
-//    @objc dynamic var url: String?
-//    
-//    static func create(withArticle article: ArticleModel) -> FavoriteArticleModel {
-//        let favorite = FavoriteArticleModel()
-//        
-//        favorite.date = article.date
-//        favorite.title = article.title
-//        favorite.content = article.content
-//        favorite.categories = article.categories
-//        favorite.url = article.url
-//        
-//        return favorite
-//    }
-//    
-//    
-//}
+/// A simple model to keep track of tasks
+class FavoriteArticleModel: NSObject, ObservableObject, Identifiable {
+    var taskName: String
+    @Published var isCompleted: Bool = false
+    
+    init(task: String) {
+        taskName = task
+    }
+}

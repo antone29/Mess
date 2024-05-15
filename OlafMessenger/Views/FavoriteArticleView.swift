@@ -11,7 +11,7 @@ struct FavoriteArticleView: View {
     @EnvironmentObject var manager: DataManager
     //added lines
     @Environment(\.managedObjectContext) private var viewContext
-        @FetchRequest(sortDescriptors: []) private var todoItems: FetchedResults<Item>
+        @FetchRequest(sortDescriptors: []) private var todoItems: FetchedResults<Article>
     
     var body: some View {
         NavigationView {
@@ -36,7 +36,7 @@ struct FavoriteArticleView: View {
     private func addItem() {
         presentTextInputAlert(title: "Add Task", message: "Enter your task name") { name in
            // manager.todoItems.append(TodoItem(task: name))
-            let newTask = Item(context: viewContext)
+            let newTask = Article(context: viewContext)
                        newTask.taskName = name
                        try? viewContext.save()
         }

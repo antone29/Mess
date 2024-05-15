@@ -11,7 +11,7 @@ import CoreData
 /// Main data manager to handle the todo items
 class DataManager: NSObject, ObservableObject {
     /// Dynamic properties that the UI will react to
-    @Published var todoItems: [TodoItem] = [TodoItem]()
+    @Published var todoItems: [FavoriteArticleModel] = [FavoriteArticleModel]()
     
     /// Add the Core Data container with the model name
     let container: NSPersistentContainer = NSPersistentContainer(name: "OlafMessenger")
