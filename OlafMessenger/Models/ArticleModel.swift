@@ -68,37 +68,37 @@
 ////        self.author = json["author"] as? Int
 ////       // self.categories = json["categories"] as? [Int]
 ////        self.url = json["jetpack_featured_media_url"] as? String
-////        
-////        if let titleDict = json["title"] as? [String: Any] {
-////            let temp = Title(json: titleDict)
-////            var temp2 = temp.title!.replacingOccurrences(of: "&#8230;", with: "...")
-////            temp2 = temp2.replacingOccurrences(of: "&#8217;", with: "'")
-////            temp2 = temp2.replacingOccurrences(of: "&#8216;", with: "\'")
-////            temp2 = temp2.replacingOccurrences(of: "&#8221", with: "\'")
-////            temp2 = temp2.replacingOccurrences(of: "&#038;", with: "&")
-////            temp2 = temp2.replacingOccurrences(of: "&#8220;", with: "'")
-////            self.title = temp2
-////        } else {
-////            self.title = json["title"] as? String
-////        }
-////        
-////        if let contentDict = json["content"] as? [String: Any] {
-////            let temp = Content(json: contentDict)
-////            var temp2 = temp.content!.replacingOccurrences(of: "&#8230;", with: "...")
-////            temp2 = temp2.replacingOccurrences(of: "&#8217;", with: "'")
-////            temp2 = temp2.replacingOccurrences(of: "&#8216;", with: "\'")
-////            temp2 = temp2.replacingOccurrences(of: "&#8221", with: "\'")
-////            temp2 = temp2.replacingOccurrences(of: "&#038;", with: "&")
-////            temp2 = temp2.replacingOccurrences(of: "&nbsp;", with: "\n")
-////            temp2 = temp2.replacingOccurrences(of: "&#8220;", with: "'")
-////            temp2 = temp2.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-////            
-////            
-////            self.content = temp2
-////        } else {
-////            self.content = json["content"] as? String
-////        }
-////    }
+//        
+//        if let titleDict = json["title"] as? [String: Any] {
+//            let temp = Title(json: titleDict)
+//            var temp2 = temp.title!.replacingOccurrences(of: "&#8230;", with: "...")
+//            temp2 = temp2.replacingOccurrences(of: "&#8217;", with: "'")
+//            temp2 = temp2.replacingOccurrences(of: "&#8216;", with: "\'")
+//            temp2 = temp2.replacingOccurrences(of: "&#8221", with: "\'")
+//            temp2 = temp2.replacingOccurrences(of: "&#038;", with: "&")
+//            temp2 = temp2.replacingOccurrences(of: "&#8220;", with: "'")
+//            self.title = temp2
+//        } else {
+//            self.title = json["title"] as? String
+//        }
+//        
+//        if let contentDict = json["content"] as? [String: Any] {
+//            let temp = Content(json: contentDict)
+//            var temp2 = temp.content!.replacingOccurrences(of: "&#8230;", with: "...")
+//            temp2 = temp2.replacingOccurrences(of: "&#8217;", with: "'")
+//            temp2 = temp2.replacingOccurrences(of: "&#8216;", with: "\'")
+//            temp2 = temp2.replacingOccurrences(of: "&#8221", with: "\'")
+//            temp2 = temp2.replacingOccurrences(of: "&#038;", with: "&")
+//            temp2 = temp2.replacingOccurrences(of: "&nbsp;", with: "\n")
+//            temp2 = temp2.replacingOccurrences(of: "&#8220;", with: "'")
+//            temp2 = temp2.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+//            
+//            
+//            self.content = temp2
+//        } else {
+//            self.content = json["content"] as? String
+//        }
+//    }
 //    
 //    
 //}

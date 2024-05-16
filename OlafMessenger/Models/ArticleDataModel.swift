@@ -18,15 +18,16 @@ class ArticleDataModel : ObservableObject {
         
         //keep in mind that this only returns one category of data(which you pass in which one you want with the id)
         Service().getDataFromServer(page: page, category: category) { data in
-          
-//                if let data = data {
-//                    for each in data {
-//                        DispatchQueue.main.async {
-//                            self.list.append(each)
-//                        }
-//                
-//                }
-//            }
+ 
+                if let data = data {
+                    for each in data {
+                      
+                        DispatchQueue.main.async {
+                            self.list.append(each)
+                        }
+                
+                }
+            }
         }
         
     }
