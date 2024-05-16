@@ -17,11 +17,11 @@ struct ArticleDetail: View {
                 AsyncImage(url: URL(string:url ))
                     .frame(width: 50, height: 50)
                     .clipped()
-                Text(articleModel.title ?? "Title Not Available")
+                Text(articleModel.title.rendered ?? "Title Not Available")
                     .font(.title)
                 //            Text(articleModel.author)
                 //                .font(.caption)
-                Text(articleModel.content!)
+                Text(articleModel.content.rendered!)
             }.padding(10)
         }
     }

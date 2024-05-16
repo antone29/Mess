@@ -16,15 +16,21 @@ struct ArticleRow: View {
                     .resizable()
                     .frame(width: 50, height: 50, alignment: .center)
                 VStack(alignment: .leading){
-                    Text(articleModel.title!)
+                    Text(articleModel.title.rendered!)
                         .font(.headline)
 //                    Text(articleModel.author)
 //                        .font(.subheadline)
-                    Text(articleModel.content!)
+                    Text(articleModel.content.rendered!)
                         .font(.caption)
                         .lineLimit(3)
                 }
                 Spacer()
+//                Button {
+//                    self.articleModel.isLiked.toggle()
+//                } label: {
+//                    Image(systemName: articleModel.isLiked ? "heart.fill" : "heart")
+//                }
+
                 
             }.padding(10)
                 .background(Color("background_yellow"))

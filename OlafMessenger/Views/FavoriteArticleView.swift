@@ -18,13 +18,13 @@ struct FavoriteArticleView: View {
             List {
                 //updated 24/25
                 ForEach(todoItems) { item in
-              //      ArticleRow(articleModel: each)
-                    Label(item.taskName ?? "no name", systemImage: "circle\(item.isCompleted ? ".fill" : "")")
-                        .frame(maxWidth: .infinity, alignment: .leading).contentShape(Rectangle())
-                        .onTapGesture {
-                            item.isCompleted = !item.isCompleted
-                           // manager.objectWillChange.send()
-                        }
+//                    ArticleRow(articleModel: ArticleModel(date: item.date, title: item.title, content: item.content, author: Int(item.author as! String), categories: item.categories as? [Int], url: item.url))
+//                    Label(item.taskName ?? "no name", systemImage: "circle\(item.isCompleted ? ".fill" : "")")
+//                        .frame(maxWidth: .infinity, alignment: .leading).contentShape(Rectangle())
+//                        .onTapGesture {
+//                            item.isCompleted = !item.isCompleted
+//                           // manager.objectWillChange.send()
+//                        }
                 }
             }
             .navigationTitle("TODO")
@@ -35,12 +35,12 @@ struct FavoriteArticleView: View {
     }
     
     private func addItem() {
-        presentTextInputAlert(title: "Add Task", message: "Enter your task name") { name in
-           // manager.todoItems.append(TodoItem(task: name))
-            let newTask = Article(context: viewContext)
-                       newTask.taskName = name
-                       try? viewContext.save()
-        }
+//        presentTextInputAlert(title: "Add Task", message: "Enter your task name") { name in
+//           // manager.favoriteArticles.append(TodoItem(task: name))
+//            let newTask = Article(context: viewContext)
+//                       newTask.taskName = name
+//                       try? viewContext.save()
+//        }
     }
 }
 

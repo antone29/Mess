@@ -12,7 +12,7 @@ import UIKit
 //Troubleshooting: Are you not getting any data at all? copy the base, page, other, and section that you are using. past into a web browser. if nothing comes up its because the page and/or category dont exist. 
 class Service {
     let session = URLSession.shared
-    let dataCache = NSCache<NSString, AnyObject>()
+   // let dataCache = NSCache<NSString, AnyObject>()
     
     //This gets the actual JSON from the Olaf Messenger website. I am able to this because the website is created through WordPress, which makes the JSON freely accesible.
     func getDataFromServer(page: Int, category: Int, completion: @escaping (Data?) -> ()) {
@@ -23,14 +23,33 @@ class Service {
         let section = String(category)
         let url = URL(string: base + page + other + section)!
         
-        let dataTask = session.dataTask(with: URLRequest(url: url)) { data, response, error in
-            if error != nil {
-                print("Error Loading the data")
-            } else {
-                if let data = data {
-                    completion(data)
-                    print(data)
+        
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        
+        let dataTask = session.dataTask(with: request) { data, response, error in
+            if error == nil {
+                do {
+                
+                   // if let articleData = self.dataToJSON(data: data!) {
+                        let result = try JSONDecoder().decode(ArticlesList.self, from: data!)
+                    for each in result {
+                        print("beep bepp")
+                        print (each.title)
+                    }
+                     //   print(result)
+                  //  }
+
+                    
+                } catch {
+                    print(error)
                 }
+               
+            } else {
+                print("Error Loading the data")
+//                if let data = data {
+//                    completion(data)
+//                    print(data)
+//                }
             }
         }
         
