@@ -14,10 +14,11 @@ struct FavoriteArticleView: View {
         @FetchRequest(sortDescriptors: []) private var todoItems: FetchedResults<Article>
     
     var body: some View {
-        NavigationView {
+
             List {
                 //updated 24/25
                 ForEach(todoItems) { item in
+              //      ArticleRow(articleModel: each)
                     Label(item.taskName ?? "no name", systemImage: "circle\(item.isCompleted ? ".fill" : "")")
                         .frame(maxWidth: .infinity, alignment: .leading).contentShape(Rectangle())
                         .onTapGesture {
@@ -30,7 +31,7 @@ struct FavoriteArticleView: View {
             .navigationBarItems(trailing: Button(action: addItem, label: {
                 Image(systemName: "plus")
             }))
-        }
+        
     }
     
     private func addItem() {

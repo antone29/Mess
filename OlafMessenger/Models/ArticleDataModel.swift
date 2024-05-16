@@ -7,18 +7,10 @@
 
 import Foundation
 import UIKit
-//import RealmSwift
-
-
-protocol ArticleDataDelegate : AnyObject {
-    func reloadViews()
-    
-}
 
 @MainActor
 class ArticleDataModel : ObservableObject {
-    
-    weak var articleDataDelegate: ArticleDataDelegate?
+
     //create an empty list to put your sorted articles in
     @Published var list: [ArticleModel] = []
 
@@ -47,7 +39,6 @@ class ArticleDataModel : ObservableObject {
                 }
             }
            
-            self.articleDataDelegate?.reloadViews()
         }
         
     }
