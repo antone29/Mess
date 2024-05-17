@@ -20,13 +20,13 @@ class ArticleDataModel : ObservableObject {
         Service().getDataFromServer(page: page, category: category) { data in
  
                 if let data = data {
-                    for each in data {
-                      
-                        DispatchQueue.main.async {
-                            self.list.append(each)
-                        }
-                
-                }
+                        for each in data {
+                            DispatchQueue.main.async {
+                                each.content.replaceCodes()
+                                each.title.replaceCodes()
+                                self.list.append(each)
+                            }
+                    }
             }
         }
         

@@ -54,20 +54,20 @@
 //       // try container.encode(isLiked, forKey: .isLiked)
 //    }
 //    
-////    init(date: String?, title: String?, content: String?, author: Int?, categories: [Int]?, url: String?) {
-////        self.date = date
-////        self.title = title
-////        self.content = content
-////        self.author = author
-////        self.categories = categories
-////        self.url = url
-////    }
+//    init(date: String?, title: String?, content: String?, author: Int?, categories: [Int]?, url: String?) {
+//        self.date = date
+//        self.title = title
+//        self.content = content
+//        self.author = author
+//        self.categories = categories
+//        self.url = url
+//    }
 //    
-////    init(json: [String:Any]) {
-////        self.date = json["date"] as? String
-////        self.author = json["author"] as? Int
-////       // self.categories = json["categories"] as? [Int]
-////        self.url = json["jetpack_featured_media_url"] as? String
+//    init(json: [String:Any]) {
+//        self.date = json["date"] as? String
+//        self.author = json["author"] as? Int
+//       // self.categories = json["categories"] as? [Int]
+//        self.url = json["jetpack_featured_media_url"] as? String
 //        
 //        if let titleDict = json["title"] as? [String: Any] {
 //            let temp = Title(json: titleDict)
