@@ -17,7 +17,7 @@ struct ArticleList: View {
     var body: some View {
         ScrollView{
             LazyVStack{
-                ForEach (articleListModel.list){ each in
+                ForEach (articleListModel.list, id: \.self){ each in
                     ArticleRow(articleModel: each)
                 }
                 ProgressView()
@@ -33,6 +33,7 @@ struct ArticleList: View {
         }
 
     }
+    
     
 }
 

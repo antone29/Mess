@@ -32,5 +32,7 @@ class ArticleDataModel : ObservableObject {
         
     }
     
+  
+    
     
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D058D0D2BF697A200587F3F /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D058D0C2BF697A200587F3F /* ArticleModel.swift */; };
+		6D058D0D2BF697A200587F3F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D058D0C2BF697A200587F3F /* Article.swift */; };
 		6D3588C62BEDD57A009EC508 /* OlafMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588C52BEDD57A009EC508 /* OlafMessengerApp.swift */; };
 		6D3588C82BEDD57A009EC508 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588C72BEDD57A009EC508 /* ContentView.swift */; };
 		6D3588CA2BEDD57C009EC508 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D3588C92BEDD57C009EC508 /* Assets.xcassets */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6D058D0C2BF697A200587F3F /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		6D058D0C2BF697A200587F3F /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		6D3588C22BEDD57A009EC508 /* OlafMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OlafMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D3588C52BEDD57A009EC508 /* OlafMessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OlafMessengerApp.swift; sourceTree = "<group>"; };
 		6D3588C72BEDD57A009EC508 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				6D3588DB2BEE66B9009EC508 /* ArticleDataModel.swift */,
-				6D058D0C2BF697A200587F3F /* ArticleModel.swift */,
+				6D058D0C2BF697A200587F3F /* Article.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 				6D3588E52BEE6A6B009EC508 /* ArticleList.swift in Sources */,
 				6DFFEABA2BF549AF009A55C0 /* FavoriteArticleView.swift in Sources */,
 				6D35890C2BEEB788009EC508 /* AboutView.swift in Sources */,
-				6D058D0D2BF697A200587F3F /* ArticleModel.swift in Sources */,
+				6D058D0D2BF697A200587F3F /* Article.swift in Sources */,
 				6D3588D22BEDD57C009EC508 /* OlafMessenger.xcdatamodeld in Sources */,
 				6D3588C82BEDD57A009EC508 /* ContentView.swift in Sources */,
 				6D3588E72BEE6A7B009EC508 /* ArticleDetail.swift in Sources */,
