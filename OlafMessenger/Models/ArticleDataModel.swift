@@ -10,6 +10,8 @@ import UIKit
 
 @MainActor
 class ArticleDataModel : ObservableObject {
+    
+    
 
     //create an empty list to put your sorted articles in
     @Published var list: [ArticleModel] = []

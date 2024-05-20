@@ -17,7 +17,6 @@ protocol CleanText {
 // MARK: - ArticleModel
 class ArticleModel: Codable, ObservableObject, Identifiable {
    
-   
     var id = UUID()
     let date: String?
     var title: Title
@@ -42,11 +41,6 @@ class ArticleModel: Codable, ObservableObject, Identifiable {
         self.isliked = isliked
         
     }
-    
-//    static func == (lhs: ArticleModel, rhs: ArticleModel) -> Bool {
-//        return lhs.id == rhs.id && lhs.id == rhs.id
-//    }
-   
     
     
   
