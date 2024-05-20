@@ -14,15 +14,24 @@ struct ArticleDetail: View {
     var body: some View {
         ScrollView{
             VStack(alignment: .center){
-                AsyncImage(url: URL(string:url ))
-                    .frame(width: 50, height: 50)
-                    .clipped()
+                AsyncImage(url: URL(string:articleModel.imageURL!),
+                           content: { image in
+                               image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: 300, maxHeight: 300)
+                           },
+                           placeholder: {
+                               ProgressView()
+                           }
+                )
+                    
                 Text(articleModel.title.rendered ?? "Title Not Available")
                     .font(.title)
                 //            Text(articleModel.author)
                 //                .font(.caption)
                 Text(articleModel.content.rendered!)
             }.padding(10)
+              
         }
     }
 }

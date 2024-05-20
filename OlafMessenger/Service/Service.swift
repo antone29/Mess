@@ -49,39 +49,3 @@ class Service {
     }
 }
 
-//MARK: - uses lazy loading to get images
-extension UIImageView {
-    
-    // MARK: - Constants
-    
-    private static let imageCache = NSCache<NSString, AnyObject>()
-    
-    // MARK: - Properties
-    
-    //Lazy loading for image from URL
-    func setImageFromUrl(imageURL :String) {
-        //If an image has already been cached for the article
-        if let cachedImage = UIImageView.imageCache.object(forKey: imageURL as NSString) as? UIImage {
-            self.image = cachedImage
-        }
-        else {
-//            if (imageURL == nil) {
-//                imageURL =
-//            }
-            URLSession.shared.dataTask( with: URL(string: imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!, completionHandler: {
-                (data, response, error) -> Void in
-                DispatchQueue.main.async {
-                    if let data = data {
-                        
-                        let imageToCache = UIImage(data: data)
-                        UIImageView.imageCache.setObject(imageToCache!, forKey: imageURL as NSString)
-                        self.image = UIImage(data: data)
-                    }
-                }
-            }).resume()
-            
-        }
-        
-    }
-    
-}
