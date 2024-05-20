@@ -41,18 +41,18 @@ struct ArticleRow: View {
                 } label: {
                     Image(systemName: articleModel.isliked ? "heart.fill" : "heart")
                 }
-                Button (role: .destructive) {
-                    withAnimation {
-                        viewContext.delete(articleModel)
-                        do {
-                            try viewContext.save()
-                        } catch {
-                            // show error
-                        }
-                    }
-                } label: {
-                    Label("Delete", systemImage: "trash")
-                }
+//                Button (role: .destructive) {
+//                    withAnimation {
+//                        viewContext.delete(articleModel)
+//                        do {
+//                            try viewContext.save()
+//                        } catch {
+//                            // show error
+//                        }
+//                    }
+//                } label: {
+//                    Label("Delete", systemImage: "trash")
+//                }
 
                 
             }.padding(10)
