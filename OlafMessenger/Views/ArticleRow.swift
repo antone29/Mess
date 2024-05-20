@@ -17,9 +17,16 @@ struct ArticleRow: View {
     var body: some View {
         NavigationLink(destination: ArticleDetail(articleModel: articleModel)) {
             HStack{
-                Image("mess_logo")
-                    .resizable()
-                    .frame(width: 50, height: 50, alignment: .center)
+                AsyncImage(url: URL(string:articleModel.imageURL!),
+                           content: { image in
+                               image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: 100, maxHeight: 100)
+                           },
+                           placeholder: {
+                               ProgressView()
+                           }
+                )
                 VStack(alignment: .leading){
                     Text(articleModel.title.rendered!)
                         .font(.headline)

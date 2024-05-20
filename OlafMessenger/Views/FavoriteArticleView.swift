@@ -23,9 +23,6 @@ struct FavoriteArticleView: View {
             }
         }
         .navigationTitle("Favorites")
-        //        .navigationBarItems(trailing: Button(action: addItem, label: {
-        //            Image(systemName: "plus")
-        //        }))
         
     }
     private func delete(at offsets: IndexSet) {
