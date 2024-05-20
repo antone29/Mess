@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 /// Main data manager to handle the todo items
 class DataManager: NSObject, ObservableObject {
@@ -21,4 +22,6 @@ class DataManager: NSObject, ObservableObject {
            super.init()
            container.loadPersistentStores { _, _ in }
        }
+    
+
 }

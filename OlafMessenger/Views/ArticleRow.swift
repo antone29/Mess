@@ -17,7 +17,7 @@ struct ArticleRow: View {
     var body: some View {
         NavigationLink(destination: ArticleDetail(articleModel: articleModel)) {
             HStack{
-                Image("mess_logo")
+                Image(articleModel.imageURL!)
                     .resizable()
                     .frame(width: 50, height: 50, alignment: .center)
                 VStack(alignment: .leading){
@@ -41,18 +41,18 @@ struct ArticleRow: View {
                 } label: {
                     Image(systemName: articleModel.isliked ? "heart.fill" : "heart")
                 }
-                Button (role: .destructive) {
-                    withAnimation {
-                        viewContext.delete(articleModel)
-                        do {
-                            try viewContext.save()
-                        } catch {
-                            // show error
-                        }
-                    }
-                } label: {
-                    Label("Delete", systemImage: "trash")
-                }
+//                Button (role: .destructive) {
+//                    withAnimation {
+//                        viewContext.delete(articleModel)
+//                        do {
+//                            try viewContext.save()
+//                        } catch {
+//                            // show error
+//                        }
+//                    }
+//                } label: {
+//                    Label("Delete", systemImage: "trash")
+//                }
 
                 
             }.padding(10)
@@ -100,3 +100,4 @@ struct ArticleRow: View {
         }
     }
 }
+

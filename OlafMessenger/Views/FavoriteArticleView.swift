@@ -10,7 +10,8 @@ import SwiftUI
 struct FavoriteArticleView: View {
     @EnvironmentObject var manager: DataManager
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: []) private var todoItems: FetchedResults<Article>
+    @FetchRequest(sortDescriptors: [NSSortDescriptor( key: "title", ascending: false)]) private var todoItems: FetchedResults<Article>
+    
     
     var body: some View {
         
