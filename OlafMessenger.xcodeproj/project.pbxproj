@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6D058D0D2BF697A200587F3F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D058D0C2BF697A200587F3F /* Article.swift */; };
-		6D058D112BFCF37100587F3F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 6D058D102BFCF37100587F3F /* Realm */; };
 		6D058D132BFCF37100587F3F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6D058D122BFCF37100587F3F /* RealmSwift */; };
 		6D3588C62BEDD57A009EC508 /* OlafMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588C52BEDD57A009EC508 /* OlafMessengerApp.swift */; };
 		6D3588C82BEDD57A009EC508 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588C72BEDD57A009EC508 /* ContentView.swift */; };
@@ -49,7 +48,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D058D132BFCF37100587F3F /* RealmSwift in Frameworks */,
-				6D058D112BFCF37100587F3F /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +140,6 @@
 			);
 			name = OlafMessenger;
 			packageProductDependencies = (
-				6D058D102BFCF37100587F3F /* Realm */,
 				6D058D122BFCF37100587F3F /* RealmSwift */,
 			);
 			productName = OlafMessenger;
@@ -432,11 +429,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6D058D102BFCF37100587F3F /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6D058D0F2BFCF37100587F3F /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
 		6D058D122BFCF37100587F3F /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6D058D0F2BFCF37100587F3F /* XCRemoteSwiftPackageReference "realm-swift" */;
