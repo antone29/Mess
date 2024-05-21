@@ -13,7 +13,7 @@ import SwiftUI
 class ArticleDataModel : ObservableObject {
     
     @ObservedObject private var favoritesViewModel = FavoriteArticleViewModel()
-
+    
     //create an empty list to put your sorted articles in
     @Published var list: [ArticleModel] = []
 
@@ -27,6 +27,7 @@ class ArticleDataModel : ObservableObject {
                             DispatchQueue.main.async {
                                 each.content.replaceCodes()
                                 each.title.replaceCodes()
+                                each.isliked = self.initializeFavorites(article: each)
                                 self.list.append(each)
                             }
                     }
@@ -37,9 +38,15 @@ class ArticleDataModel : ObservableObject {
         
     }
     
-  
-    func initializeFavorites () {
-        self.list
+    func initializeFavorites (article: ArticleModel) -> Bool {
+        for each in favoritesViewModel.articles {
+            if (article.title.rendered == each.title)&&(article.author == each.author) {
+                return true
+            }
+        }
+        return false
     }
+    
+
     
 }

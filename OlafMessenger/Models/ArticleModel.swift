@@ -17,7 +17,7 @@ protocol CleanText {
 // MARK: - ArticleModel
 class ArticleModel: Codable, ObservableObject, Identifiable {
    
-    var id = ObjectId?.self
+    var id : ObjectId?
     let date: String?
     var title: Title
     var content: Content
@@ -47,6 +47,8 @@ class ArticleModel: Codable, ObservableObject, Identifiable {
 }
 
 extension ArticleModel : Hashable {
+
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
 
@@ -59,6 +61,8 @@ extension ArticleModel : Hashable {
 //           hasher.combine(id)
 //        hasher.combine(title.rendered)
 //       }
+    
+    
 }
 // MARK: - Content
 struct Content: Codable, CleanText {
