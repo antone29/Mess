@@ -10,6 +10,7 @@ import RealmSwift
 
 class FavoriteArticleModel: Object, Identifiable {
     @Persisted(primaryKey: true) var id: ObjectId
+    
     @Persisted var title: String?
     @Persisted var content: String?
     @Persisted var url: String?

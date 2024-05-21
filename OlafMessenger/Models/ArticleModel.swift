@@ -74,6 +74,7 @@ struct Content: Codable, CleanText {
         newContent = newContent.replacingOccurrences(of: "&#8220;", with: "'")
         newContent = newContent.replacingOccurrences(of: "&#8216;", with: "\'")
         newContent = newContent.replacingOccurrences(of: "&#8221", with: "\'")
+        newContent = newContent.replacingOccurrences(of: "&#8211;", with: "-")
         newContent = newContent.replacingOccurrences(of: "&#038;", with: "&")
         newContent = newContent.replacingOccurrences(of: "&nbsp;", with: "\n")
         newContent = newContent.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
@@ -96,6 +97,7 @@ struct Title: Codable, CleanText {
         newContent = newContent.replacingOccurrences(of: "&#8221", with: "\'")
         newContent = newContent.replacingOccurrences(of: "&#038;", with: "&")
         newContent = newContent.replacingOccurrences(of: "&#8220;", with: "'")
+        newContent = newContent.replacingOccurrences(of: "&#8211;", with: "-")
         
         
         self.rendered = newContent

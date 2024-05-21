@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6D058D0D2BF697A200587F3F /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D058D0C2BF697A200587F3F /* ArticleModel.swift */; };
-		6D058D132BFCF37100587F3F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6D058D122BFCF37100587F3F /* RealmSwift */; };
 		6D058D422BFD07BC00587F3F /* FavoriteArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D058D412BFD07BC00587F3F /* FavoriteArticleModel.swift */; };
 		6D058D452BFD0EE600587F3F /* FavoriteArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D058D442BFD0EE600587F3F /* FavoriteArticleViewModel.swift */; };
+		6D2D34622BFD395E00DB1142 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6D2D34612BFD395E00DB1142 /* RealmSwift */; };
 		6D3588C62BEDD57A009EC508 /* OlafMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588C52BEDD57A009EC508 /* OlafMessengerApp.swift */; };
 		6D3588C82BEDD57A009EC508 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588C72BEDD57A009EC508 /* ContentView.swift */; };
 		6D3588CA2BEDD57C009EC508 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D3588C92BEDD57C009EC508 /* Assets.xcassets */; };
@@ -22,7 +22,6 @@
 		6D3588E52BEE6A6B009EC508 /* ArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588E42BEE6A6B009EC508 /* ArticleList.swift */; };
 		6D3588E72BEE6A7B009EC508 /* ArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3588E62BEE6A7B009EC508 /* ArticleDetail.swift */; };
 		6D35890C2BEEB788009EC508 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D35890B2BEEB788009EC508 /* AboutView.swift */; };
-		6DFFEAB82BF549AF009A55C0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFFEAB52BF549AF009A55C0 /* DataManager.swift */; };
 		6DFFEABA2BF549AF009A55C0 /* FavoriteArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFFEAB72BF549AF009A55C0 /* FavoriteArticleView.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,6 @@
 		6D3588E42BEE6A6B009EC508 /* ArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleList.swift; sourceTree = "<group>"; };
 		6D3588E62BEE6A7B009EC508 /* ArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetail.swift; sourceTree = "<group>"; };
 		6D35890B2BEEB788009EC508 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		6DFFEAB52BF549AF009A55C0 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		6DFFEAB72BF549AF009A55C0 /* FavoriteArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteArticleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D058D132BFCF37100587F3F /* RealmSwift in Frameworks */,
+				6D2D34622BFD395E00DB1142 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +116,6 @@
 		6D3588DD2BEE66EA009EC508 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				6DFFEAB52BF549AF009A55C0 /* DataManager.swift */,
 				6D3588DE2BEE66F5009EC508 /* Service.swift */,
 			);
 			path = Service;
@@ -154,7 +151,7 @@
 			);
 			name = OlafMessenger;
 			packageProductDependencies = (
-				6D058D122BFCF37100587F3F /* RealmSwift */,
+				6D2D34612BFD395E00DB1142 /* RealmSwift */,
 			);
 			productName = OlafMessenger;
 			productReference = 6D3588C22BEDD57A009EC508 /* OlafMessenger.app */;
@@ -225,7 +222,6 @@
 				6D3588E72BEE6A7B009EC508 /* ArticleDetail.swift in Sources */,
 				6D3588DC2BEE66B9009EC508 /* ArticleDataModel.swift in Sources */,
 				6D3588C62BEDD57A009EC508 /* OlafMessengerApp.swift in Sources */,
-				6DFFEAB82BF549AF009A55C0 /* DataManager.swift in Sources */,
 				6D3588E32BEE6A5C009EC508 /* ArticleRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,7 +441,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6D058D122BFCF37100587F3F /* RealmSwift */ = {
+		6D2D34612BFD395E00DB1142 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6D058D0F2BFCF37100587F3F /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;

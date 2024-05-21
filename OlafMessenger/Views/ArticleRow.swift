@@ -12,9 +12,6 @@ struct ArticleRow: View {
     @StateObject var articleModel : ArticleModel
     @ObservedObject private var favoritesViewModel = FavoriteArticleViewModel()
     
-//    @EnvironmentObject var manager: DataManager
-//    @Environment(\.managedObjectContext) private var viewContext
-//    @FetchRequest(sortDescriptors: []) private var todoItems: FetchedResults<Article>
     
     var body: some View {
         NavigationLink(destination: ArticleDetail(articleModel: articleModel)) {
@@ -64,42 +61,4 @@ struct ArticleRow: View {
         }
     }
     
-//    private func delete(at offsets: IndexSet) {
-//           for index in offsets {
-//               let todo = todoItems[index]
-//               self.viewContext.delete(todo)
-//               do {
-//                   try viewContext.save()
-//                   print("perform delete")
-//               } catch {
-//                   // handle the Core Data error
-//               }
-//           }
-//       }
-    
-//    func addItem(article: ArticleModel) {
-//        
-//        
-//        let newFavoriteArticle = Article(context: viewContext)
-//        //newFavoriteArticle.author = article.author
-//        //newFavoriteArticle.categories = article.categories
-//        newFavoriteArticle.content = article.content.rendered
-//        newFavoriteArticle.date = article.date
-//        newFavoriteArticle.title = article.title.rendered
-//        newFavoriteArticle.url = article.imageURL
-//        
-//        try? viewContext.save()
-//        
-//    }
-    
-
-    
-//    func deleteItem(article: Article) {
-//        viewContext.delete(article)
-//        do {
-//            try viewContext.save()
-//        } catch {
-//            print(error)
-//        }
-//    }
 }
