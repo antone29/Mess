@@ -12,11 +12,13 @@ struct FavoriteArticleView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: []) private var todoItems: FetchedResults<Article>
     
+    @ObservedObject private var favoritesViewModel = FavoriteArticleViewModel()
+    
     var body: some View {
         
         List {
-            if !todoItems.isEmpty {
-                ForEach(todoItems, id: \.self) { item in
+            if !favoritesViewModel.articles.isEmpty {
+                ForEach(favoritesViewModel.articles, id: \.self) { item in
                     ArticleRow(articleModel: ArticleModel(date: item.date, title: item.title ?? "", content: item.content ?? "", author: 0, categories:  [0], imageURL: item.url, isliked: true))
                 }
                 .onDelete(perform: delete)

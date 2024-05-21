@@ -14,7 +14,7 @@ struct ArticleDetail: View {
     var body: some View {
         ScrollView{
             VStack(alignment: .center){
-                AsyncImage(url: URL(string:articleModel.imageURL!),
+                AsyncImage(url: URL(string:articleModel.imageURL ?? "https://en.wiktionary.org/wiki/newspaper#/media/File:The_Indianapolis_Star,_2011.jpg"),
                            content: { image in
                                image.resizable()
                                     .aspectRatio(contentMode: .fit)

@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+import RealmSwift
 
 protocol CleanText {
     var rendered: String? { get }
@@ -17,7 +17,7 @@ protocol CleanText {
 // MARK: - ArticleModel
 class ArticleModel: Codable, ObservableObject, Identifiable {
    
-    var id = UUID()
+    var id = ObjectId?.self
     let date: String?
     var title: Title
     var content: Content

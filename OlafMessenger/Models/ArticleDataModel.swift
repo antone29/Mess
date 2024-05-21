@@ -7,11 +7,12 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 @MainActor
 class ArticleDataModel : ObservableObject {
     
-    
+    @ObservedObject private var favoritesViewModel = FavoriteArticleViewModel()
 
     //create an empty list to put your sorted articles in
     @Published var list: [ArticleModel] = []
@@ -30,11 +31,15 @@ class ArticleDataModel : ObservableObject {
                             }
                     }
             }
+            
+        
         }
         
     }
     
   
-    
+    func initializeFavorites () {
+        self.list
+    }
     
 }
