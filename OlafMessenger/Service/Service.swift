@@ -25,7 +25,6 @@ class Service {
                 do {
                         let result = try JSONDecoder().decode(ArticlesList.self, from: data!)
                     completion(result)
-                    print(result)
                 } catch {
                     print(error)
                 }

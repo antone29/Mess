@@ -16,8 +16,9 @@ protocol CleanText {
 
 // MARK: - ArticleModel
 class ArticleModel: Codable, ObservableObject, Identifiable {
-   
-    var id : ObjectId?
+  
+    var id = UUID()
+    var favoritesId : String?
     let date: String?
     var title: Title
     var content: Content

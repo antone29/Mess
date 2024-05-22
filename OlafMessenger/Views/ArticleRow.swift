@@ -37,16 +37,7 @@ struct ArticleRow: View {
                 }
                 Spacer()
                 Button {
-                    self.articleModel.isliked.toggle()
-                    if articleModel.isliked {
-                        favoritesViewModel.addArticle(title: articleModel.title.rendered!, content: articleModel.content.rendered!, author: articleModel.author!)
-                        
-                       // addItem(article: articleModel)
-                    } else {
-                      //  favoritesViewModel.deleteArticle(id: articleModel.id)
-                       //deleteItem(article: articleModel)
-                    }
-                    
+                      handleToggle()
                 } label: {
                     Image(systemName: articleModel.isliked ? "heart.fill" : "heart")
                 }
@@ -59,6 +50,19 @@ struct ArticleRow: View {
             
             
         }
+    }
+    
+    func handleToggle() {
+        self.articleModel.isliked.toggle()
+        if articleModel.isliked {
+            let temp = favoritesViewModel.addArticle( title: articleModel.title.rendered!, content: articleModel.content.rendered!, author: articleModel.author!)
+            articleModel.favoritesId = temp
+          
+        } else {
+            favoritesViewModel.deleteArticle(id: articleModel.favoritesId!)
+           //deleteItem(article: articleModel)
+        }
+
     }
     
 }

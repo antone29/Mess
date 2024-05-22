@@ -38,12 +38,13 @@ class FavoriteArticleViewModel: ObservableObject {
         }
     }
     
-    func addArticle(title: String, content: String, author: Int) {
+    func addArticle(title: String, content: String, author: Int) -> String{
         let article = FavoriteArticleModel()
         article.title = title
         article.content = content
         article.author = author
         $favoriteArticlesList.append(article)
+        return article.id.stringValue
     }
     
     func deleteArticle(id: String) {

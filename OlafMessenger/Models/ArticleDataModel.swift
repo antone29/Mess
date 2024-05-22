@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import RealmSwift
 
 @MainActor
 class ArticleDataModel : ObservableObject {
@@ -27,7 +28,9 @@ class ArticleDataModel : ObservableObject {
                             DispatchQueue.main.async {
                                 each.content.replaceCodes()
                                 each.title.replaceCodes()
-                                each.isliked = self.initializeFavorites(article: each)
+                                let temp = self.initializeFavorites(article: each)
+                                each.isliked = temp.isliked
+                                each.favoritesId = temp.idValue
                                 self.list.append(each)
                             }
                     }
@@ -38,13 +41,16 @@ class ArticleDataModel : ObservableObject {
         
     }
     
-    func initializeFavorites (article: ArticleModel) -> Bool {
+    func initializeFavorites (article: ArticleModel) -> (isliked: Bool, idValue : String) {
         for each in favoritesViewModel.articles {
             if (article.title.rendered == each.title)&&(article.author == each.author) {
-                return true
+                //might have an issue here
+               // each.id = article.id
+                let temp = each.id.stringValue
+                return (isliked: true, idValue :temp)
             }
         }
-        return false
+        return (isliked: false, idValue :"temp")
     }
     
 
