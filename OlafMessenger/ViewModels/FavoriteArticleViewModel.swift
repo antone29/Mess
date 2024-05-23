@@ -50,10 +50,6 @@ class FavoriteArticleViewModel: ObservableObject {
     func deleteArticle(id: String) {
         do {
             let realm = try Realm()
-//            try! realm.write {
-//                realm.deleteAll()
-//                
-//            }
             let objectId = try ObjectId(string: id)
             if let article = realm.object(ofType: FavoriteArticleModel.self, forPrimaryKey: objectId) {
                 try realm.write {

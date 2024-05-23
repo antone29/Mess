@@ -60,7 +60,7 @@ struct ArticleRow: View {
           
         } else {
             favoritesViewModel.deleteArticle(id: articleModel.favoritesId!)
-           //deleteItem(article: articleModel)
+          
         }
 
     }

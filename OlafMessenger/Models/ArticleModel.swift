@@ -57,12 +57,7 @@ extension ArticleModel : Hashable {
     static func == (lhs: ArticleModel, rhs: ArticleModel) -> Bool {
         return lhs.id == rhs.id
     }
-//    
-//    func hash(into hasher: inout Hasher) {
-//           hasher.combine(id)
-//        hasher.combine(title.rendered)
-//       }
-    
+
     
 }
 // MARK: - Content

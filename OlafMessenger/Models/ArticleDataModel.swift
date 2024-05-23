@@ -44,8 +44,6 @@ class ArticleDataModel : ObservableObject {
     func initializeFavorites (article: ArticleModel) -> (isliked: Bool, idValue : String) {
         for each in favoritesViewModel.articles {
             if (article.title.rendered == each.title)&&(article.author == each.author) {
-                //might have an issue here
-               // each.id = article.id
                 let temp = each.id.stringValue
                 return (isliked: true, idValue :temp)
             }
